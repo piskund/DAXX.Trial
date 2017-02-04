@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daxx.Trial.MVC", "Daxx.Trial.MVC\Daxx.Trial.MVC.csproj", "{9C392D07-BDA2-4F40-943D-B7C46ECD07C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daxx.Trial.MVC.Tests", "Daxx.Trial.MVC.Tests\Daxx.Trial.MVC.Tests.csproj", "{BA108919-DF5F-4384-BB3C-2C182AD228B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daxx.Trial.DAL", "Dax.Trial.DAL\Daxx.Trial.DAL.csproj", "{CF1E47B5-0A80-4E0E-9F34-CE448E093F2A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C392D07-BDA2-4F40-943D-B7C46ECD07C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C392D07-BDA2-4F40-943D-B7C46ECD07C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C392D07-BDA2-4F40-943D-B7C46ECD07C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C392D07-BDA2-4F40-943D-B7C46ECD07C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA108919-DF5F-4384-BB3C-2C182AD228B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA108919-DF5F-4384-BB3C-2C182AD228B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA108919-DF5F-4384-BB3C-2C182AD228B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA108919-DF5F-4384-BB3C-2C182AD228B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF1E47B5-0A80-4E0E-9F34-CE448E093F2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF1E47B5-0A80-4E0E-9F34-CE448E093F2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF1E47B5-0A80-4E0E-9F34-CE448E093F2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF1E47B5-0A80-4E0E-9F34-CE448E093F2A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Daxx.Trial.MVC.Models.TradeInfoViewModel>
+
+<ul class="list-group">
+    @foreach (var item in Model)
+    {
+        <li>
+            <div class="row">
+                <div class="col-md-1">
+                    @Html.DisplayFor(m => item.Id)
+                </div>
+                <div class="col-md-10">
+                </div>
+                <div class="col-md-1">
+                </div>
+            </div>
+        </li>
+    }
+</ul>
+
