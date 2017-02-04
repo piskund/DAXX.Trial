@@ -40,8 +40,10 @@ namespace Daxx.Trial.DAL.JsonBasedImpl
 
         public IEnumerable<TradeInfoEntity> GetAll()
         {
-            return new[] {new TradeInfoEntity {Id = 1}, new TradeInfoEntity {Id = 2}};
-            //throw new NotImplementedException();
+            return new[] {
+                new TradeInfoEntity {Id = 1, CountryCode = "US", Name = "Tender Sale", Category  = "CONCRETE ELEMENTS PRODUCTION LINE", Url = @"https://beta.twa.nl/nl/concrete-elements-production-line/01-23988/", City = "New York"},
+                new TradeInfoEntity {Id = 2, CountryCode = "UA", Name = "Online Auction", Category  = "CARS AND COPYING MACHINES", Url = @"https://beta.twa.nl/nl/bandenservicebedrijf-atu-amsterdam/01-23858/", City = "Kiev"}
+            };
         }
 
         public IQueryable<TradeInfoEntity> GetQueryable()

@@ -38,6 +38,14 @@ namespace Daxx.Trial.MVC.Models
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or sets the category.
+        /// </summary>
+        /// <value>
+        /// The category.
+        /// </value>
+        public string Category { get; set; }
+
+        /// <summary>
         /// Gets or sets the city.
         /// </summary>
         /// <value>
@@ -60,6 +68,7 @@ namespace Daxx.Trial.MVC.Models
         /// <value>
         /// The URL.
         /// </value>
+        [DataType(DataType.Url)]
         public string Url { get; set; }
 
         /// <summary>
@@ -82,6 +91,7 @@ namespace Daxx.Trial.MVC.Models
         {
             Id = entity.Id;
             Name = entity.Name;
+            Category = entity.Category;
             City = entity.City;
             CountryCode = entity.CountryCode;
             Url = entity.Url;

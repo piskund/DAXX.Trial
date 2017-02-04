@@ -22,3 +22,13 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.trades-list {
+    padding-top: 1%;
+    font-size: 13px;
+}
+
+.trades-list ul .li {
+    display: inline;
+    padding: 10px;
+}

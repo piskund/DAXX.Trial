@@ -30,6 +30,14 @@ namespace Daxx.Trial.DAL.Entities
         public string Name { get; set; }
 
         /// <summary>
+        /// Gets or sets the category.
+        /// </summary>
+        /// <value>
+        /// The category.
+        /// </value>
+        public string Category { get; set; }
+
+        /// <summary>
         /// Gets or sets the city.
         /// </summary>
         /// <value>
