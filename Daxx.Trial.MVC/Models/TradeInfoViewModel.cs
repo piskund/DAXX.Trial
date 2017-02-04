@@ -2,6 +2,7 @@
 //  TradeInfoViewModel.cs created by DEP on 2017/02/04
 // -------------------------------------------------------------------------------------------------------------
 
+using System.ComponentModel.DataAnnotations;
 using CodeContracts;
 using Daxx.Trial.DAL.Entities;
 
@@ -16,7 +17,8 @@ namespace Daxx.Trial.MVC.Models
         public TradeInfoViewModel(TradeInfoEntity entity)
         {
             Requires.NotNull(entity, nameof(entity));
-            Id = entity.Id;
+
+            MapEntityToModel(entity);
         }
 
         /// <summary>
@@ -28,6 +30,39 @@ namespace Daxx.Trial.MVC.Models
         public int Id { get; set; }
 
         /// <summary>
+        /// Gets or sets the name.
+        /// </summary>
+        /// <value>
+        /// The name.
+        /// </value>
+        public string Name { get; set; }
+
+        /// <summary>
+        /// Gets or sets the city.
+        /// </summary>
+        /// <value>
+        /// The city.
+        /// </value>
+        public string City { get; set; }
+
+        /// <summary>
+        /// Gets or sets the country code.
+        /// </summary>
+        /// <value>
+        /// The country code.
+        /// </value>
+        [Display(Name = "Country Code")]
+        public string CountryCode { get; set; }
+
+        /// <summary>
+        /// Gets or sets the URL.
+        /// </summary>
+        /// <value>
+        /// The URL.
+        /// </value>
+        public string Url { get; set; }
+
+        /// <summary>
         /// Performs an explicit conversion from <see cref="TradeInfoEntity"/> to <see cref="TradeInfoViewModel"/>.
         /// </summary>
         /// <param name="entity">The entity.</param>
@@ -37,6 +72,19 @@ namespace Daxx.Trial.MVC.Models
         public static explicit operator TradeInfoViewModel(TradeInfoEntity entity)
         {
             return new TradeInfoViewModel(entity);
+        }
+
+        /// <summary>
+        /// Maps the entity to the model.
+        /// </summary>
+        /// <param name="entity">The entity.</param>
+        private void MapEntityToModel(TradeInfoEntity entity)
+        {
+            Id = entity.Id;
+            Name = entity.Name;
+            City = entity.City;
+            CountryCode = entity.CountryCode;
+            Url = entity.Url;
         }
     }
 }
