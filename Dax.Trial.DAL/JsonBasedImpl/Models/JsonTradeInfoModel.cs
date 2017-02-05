@@ -13,6 +13,9 @@ namespace Daxx.Trial.DAL.JsonBasedImpl.Models
     /// <seealso cref="ITradeInfoEntity" />
     internal class JsonTradeInfoModel : ITradeInfoEntity
     {
+        private const string UrlPrefix = @"https://beta.twa.nl/nl";
+        private string _salesUrl;
+
         /// <summary>
         /// Gets or sets the identifier.
         /// </summary>
@@ -59,11 +62,29 @@ namespace Daxx.Trial.DAL.JsonBasedImpl.Models
         public string CountryCode { get; set; }
 
         /// <summary>
+        /// Gets or sets the sales URL.
+        /// </summary>
+        /// <value>
+        /// The sales URL.
+        /// </value>
+        [JsonProperty("url")]
+        public string SalesUrl
+        {
+            get { return _salesUrl; }
+            set
+            {
+                _salesUrl = value;
+                Url = UrlPrefix + value;
+            }
+        }
+
+        /// <summary>
         /// Gets or sets the URL.
         /// </summary>
         /// <value>
         /// The URL.
         /// </value>
+        [JsonIgnore]
         public string Url { get; set; }
     }
 }
