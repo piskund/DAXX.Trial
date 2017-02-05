@@ -3,9 +3,9 @@
 // -------------------------------------------------------------------------------------------------------------
 
 using System;
-using Daxx.Trial.DAL.Interfaces;
+using Daxx.Trial.Abstractions.Interfaces;
 
-namespace Daxx.Trial.DAL.Entities
+namespace Daxx.Trial.Abstractions.Entities
 {
     /// <summary>
     /// Provides configuration info necessary to perform backup.

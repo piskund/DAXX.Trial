@@ -3,8 +3,8 @@
 // -------------------------------------------------------------------------------------------------------------
 
 using System.Web.Mvc;
-using Daxx.Trial.DAL.Interfaces;
 using Daxx.Trial.MVC.Controllers;
+using Daxx.Trial.Abstractions.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 

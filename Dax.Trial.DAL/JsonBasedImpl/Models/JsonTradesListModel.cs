@@ -3,14 +3,14 @@
 // -------------------------------------------------------------------------------------------------------------
 
 using System.Collections.Generic;
-using Daxx.Trial.DAL.Interfaces;
+using Daxx.Trial.Abstractions.Interfaces;
 
 namespace Daxx.Trial.DAL.JsonBasedImpl.Models
 {
     /// <summary>
     /// Represents model for serialize/deserialize collection of trades info in json format.
     /// </summary>
-    /// <seealso cref="Daxx.Trial.DAL.Interfaces.IEntity" />
+    /// <seealso cref="IEntity" />
     internal class JsonTradesListModel : IEntity
     {
 

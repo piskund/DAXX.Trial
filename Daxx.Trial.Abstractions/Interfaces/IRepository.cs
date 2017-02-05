@@ -2,12 +2,10 @@
 //  IRepository.cs created by DEP on 2017/02/04
 // -------------------------------------------------------------------------------------------------------------
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 
-namespace Daxx.Trial.DAL.Interfaces
+namespace Daxx.Trial.Abstractions.Interfaces
 {
     /// <summary>
     /// Repository contract

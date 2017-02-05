@@ -2,7 +2,7 @@
 //  IEntity.cs created by DEP on 2017/02/04
 // -------------------------------------------------------------------------------------------------------------
 
-namespace Daxx.Trial.DAL.Interfaces
+namespace Daxx.Trial.Abstractions.Interfaces
 {
     /// <summary>
     /// Defines an idendifitable object (entity).

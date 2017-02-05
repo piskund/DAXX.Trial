@@ -181,7 +181,9 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -207,6 +209,10 @@
     <ProjectReference Include="..\Dax.Trial.DAL\Daxx.Trial.DAL.csproj">
       <Project>{cf1e47b5-0a80-4e0e-9f34-ce448e093f2a}</Project>
       <Name>Daxx.Trial.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAXX.Trial.Abstractions\Daxx.Trial.Abstractions.csproj">
+      <Project>{86363835-12ac-4f4c-bee3-ac2c0841d425}</Project>
+      <Name>Daxx.Trial.Abstractions</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

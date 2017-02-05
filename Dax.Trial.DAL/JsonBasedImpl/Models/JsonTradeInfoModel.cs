@@ -2,8 +2,7 @@
 //  JsonTradeInfoModel.cs created by DEP on 2017/02/05
 // -------------------------------------------------------------------------------------------------------------
 
-using Daxx.Trial.DAL.Entities;
-using Daxx.Trial.DAL.Interfaces;
+using Daxx.Trial.Abstractions.Interfaces;
 using Newtonsoft.Json;
 
 namespace Daxx.Trial.DAL.JsonBasedImpl.Models
@@ -11,7 +10,7 @@ namespace Daxx.Trial.DAL.JsonBasedImpl.Models
     /// <summary>
     /// Represents model for serialize/deserialize trade info in json format.
     /// </summary>
-    /// <seealso cref="Daxx.Trial.DAL.Interfaces.ITradeInfoEntity" />
+    /// <seealso cref="ITradeInfoEntity" />
     internal class JsonTradeInfoModel : ITradeInfoEntity
     {
         /// <summary>

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daxx.Trial.MVC.Tests", "Dax
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daxx.Trial.DAL", "Dax.Trial.DAL\Daxx.Trial.DAL.csproj", "{CF1E47B5-0A80-4E0E-9F34-CE448E093F2A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daxx.Trial.Abstractions", "DAXX.Trial.Abstractions\Daxx.Trial.Abstractions.csproj", "{86363835-12AC-4F4C-BEE3-AC2C0841D425}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{CF1E47B5-0A80-4E0E-9F34-CE448E093F2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF1E47B5-0A80-4E0E-9F34-CE448E093F2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF1E47B5-0A80-4E0E-9F34-CE448E093F2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86363835-12AC-4F4C-BEE3-AC2C0841D425}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86363835-12AC-4F4C-BEE3-AC2C0841D425}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86363835-12AC-4F4C-BEE3-AC2C0841D425}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86363835-12AC-4F4C-BEE3-AC2C0841D425}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

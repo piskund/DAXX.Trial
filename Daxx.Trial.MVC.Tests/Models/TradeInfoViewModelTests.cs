@@ -2,9 +2,9 @@
 //  TradeInfoViewModelTests.cs created by DEP on 2017/02/04
 // -------------------------------------------------------------------------------------------------------------
 
-using Daxx.Trial.DAL.Entities;
-using Daxx.Trial.DAL.Interfaces;
 using Daxx.Trial.MVC.Models;
+using Daxx.Trial.Abstractions.Entities;
+using Daxx.Trial.Abstractions.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Ploeh.AutoFixture;
 

@@ -6,8 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using Daxx.Trial.DAL.Entities;
-using Daxx.Trial.DAL.Interfaces;
+using Daxx.Trial.Abstractions.Entities;
+using Daxx.Trial.Abstractions.Interfaces;
 
 namespace Daxx.Trial.DAL.JsonBasedImpl
 {

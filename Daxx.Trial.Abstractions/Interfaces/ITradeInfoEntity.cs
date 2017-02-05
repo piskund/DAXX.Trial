@@ -2,7 +2,7 @@
 //  ITradeInfoEntity.cs created by DEP on 2017/02/05
 // -------------------------------------------------------------------------------------------------------------
 
-namespace Daxx.Trial.DAL.Interfaces
+namespace Daxx.Trial.Abstractions.Interfaces
 {
     public interface ITradeInfoEntity : IEntity
     {

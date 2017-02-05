@@ -3,7 +3,7 @@
 // -------------------------------------------------------------------------------------------------------------
 
 using System.Web;
-using Daxx.Trial.DAL.Interfaces;
+using Daxx.Trial.Abstractions.Interfaces;
 
 namespace Daxx.Trial.MVC
 {

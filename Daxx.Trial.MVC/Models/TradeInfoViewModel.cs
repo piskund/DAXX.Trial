@@ -4,8 +4,8 @@
 
 using System.ComponentModel.DataAnnotations;
 using CodeContracts;
-using Daxx.Trial.DAL.Entities;
-using Daxx.Trial.DAL.Interfaces;
+using Daxx.Trial.Abstractions.Entities;
+using Daxx.Trial.Abstractions.Interfaces;
 
 namespace Daxx.Trial.MVC.Models
 {

@@ -5,8 +5,8 @@
 using System.Linq;
 using System.Web.Mvc;
 using CodeContracts;
-using Daxx.Trial.DAL.Interfaces;
 using Daxx.Trial.MVC.Models;
+using Daxx.Trial.Abstractions.Interfaces;
 
 namespace Daxx.Trial.MVC.Controllers
 {
