@@ -5,16 +5,17 @@
 using System.ComponentModel.DataAnnotations;
 using CodeContracts;
 using Daxx.Trial.DAL.Entities;
+using Daxx.Trial.DAL.Interfaces;
 
 namespace Daxx.Trial.MVC.Models
 {
-    public class TradeInfoViewModel
+    public class TradeInfoViewModel : ITradeInfoEntity
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="TradeInfoViewModel"/> class.
         /// </summary>
         /// <param name="entity">The entity.</param>
-        public TradeInfoViewModel(TradeInfoEntity entity)
+        public TradeInfoViewModel(ITradeInfoEntity entity)
         {
             Requires.NotNull(entity, nameof(entity));
 
@@ -87,7 +88,7 @@ namespace Daxx.Trial.MVC.Models
         /// Maps the entity to the model.
         /// </summary>
         /// <param name="entity">The entity.</param>
-        private void MapEntityToModel(TradeInfoEntity entity)
+        private void MapEntityToModel(ITradeInfoEntity entity)
         {
             Id = entity.Id;
             Name = entity.Name;

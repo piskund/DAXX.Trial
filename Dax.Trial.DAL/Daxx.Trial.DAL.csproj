@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CodeContracts, Version=1.0.5680.18392, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CodeContracts.1.0.5680.18392\lib\net40\CodeContracts.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -45,17 +49,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\TradeInfoEntity.cs" />
+    <Compile Include="Interfaces\IAppDataProvider.cs" />
     <Compile Include="Interfaces\IEntity.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\ITradeInfoEntity.cs" />
     <Compile Include="Interfaces\ITradesRepository.cs" />
     <Compile Include="JsonBasedImpl\JsonBasedTradesRepository.cs" />
+    <Compile Include="JsonBasedImpl\JsonTradesInfoReader.cs" />
+    <Compile Include="JsonBasedImpl\Models\JsonTradeInfoModel.cs" />
+    <Compile Include="JsonBasedImpl\Models\JsonTradesListModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="JsonBasedImpl\json.txt" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,45 +1,26 @@
 ﻿// -------------------------------------------------------------------------------------------------------------
-//  TradeInfoEntity.cs created by DEP on 2017/02/04
+//  JsonTradeInfoModel.cs created by DEP on 2017/02/05
 // -------------------------------------------------------------------------------------------------------------
 
-using System;
+using Daxx.Trial.DAL.Entities;
 using Daxx.Trial.DAL.Interfaces;
+using Newtonsoft.Json;
 
-namespace Daxx.Trial.DAL.Entities
+namespace Daxx.Trial.DAL.JsonBasedImpl.Models
 {
     /// <summary>
-    /// Provides configuration info necessary to perform backup.
+    /// Represents model for serialize/deserialize trade info in json format.
     /// </summary>
-    [Serializable]
-    public class TradeInfoEntity : ITradeInfoEntity
+    /// <seealso cref="Daxx.Trial.DAL.Interfaces.ITradeInfoEntity" />
+    internal class JsonTradeInfoModel : ITradeInfoEntity
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TradeInfoEntity"/> class.
-        /// </summary>
-        public TradeInfoEntity()
-        {
-        }
-
-        /// <summary>
-        /// Initializes a new instance of the <see cref="TradeInfoEntity"/> class.
-        /// </summary>
-        /// <param name="entity">The entity.</param>
-        public TradeInfoEntity(ITradeInfoEntity entity)
-        {
-            Id = entity.Id;
-            Name = entity.Name;
-            Category = entity.Category;
-            City = entity.City;
-            CountryCode = entity.CountryCode;
-            Url = entity.Url;
-        }
-
         /// <summary>
         /// Gets or sets the identifier.
         /// </summary>
         /// <value>
         /// The identifier.
         /// </value>
+        [JsonProperty("i")]
         public int Id { get; set; }
 
         /// <summary>
@@ -48,6 +29,7 @@ namespace Daxx.Trial.DAL.Entities
         /// <value>
         /// The name.
         /// </value>
+        [JsonProperty("stn")]
         public string Name { get; set; }
 
         /// <summary>
@@ -56,6 +38,7 @@ namespace Daxx.Trial.DAL.Entities
         /// <value>
         /// The category.
         /// </value>
+        [JsonProperty("n")]
         public string Category { get; set; }
 
         /// <summary>
@@ -64,6 +47,7 @@ namespace Daxx.Trial.DAL.Entities
         /// <value>
         /// The city.
         /// </value>
+        [JsonProperty("c")]
         public string City { get; set; }
 
         /// <summary>
@@ -72,6 +56,7 @@ namespace Daxx.Trial.DAL.Entities
         /// <value>
         /// The country code.
         /// </value>
+        [JsonProperty("cc")]
         public string CountryCode { get; set; }
 
         /// <summary>
@@ -80,6 +65,7 @@ namespace Daxx.Trial.DAL.Entities
         /// <value>
         /// The URL.
         /// </value>
+        [JsonProperty("i")]
         public string Url { get; set; }
     }
 }

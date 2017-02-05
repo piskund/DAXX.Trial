@@ -3,7 +3,7 @@
 // -------------------------------------------------------------------------------------------------------------
 
 using Daxx.Trial.DAL.Entities;
-using Daxx.Trial.MVC.Models;
+using Daxx.Trial.DAL.Interfaces;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Daxx.Trial.MVC.Tests
@@ -13,16 +13,16 @@ namespace Daxx.Trial.MVC.Tests
         /// <summary>
         /// Asserts if the model equal to the entity (in terms of the tracking properties).
         /// </summary>
-        /// <param name="tradeInfoViewModel">The trade information view model.</param>
-        /// <param name="entity">The entity.</param>
-        public static void AreEqualToEntity(this TradeInfoViewModel tradeInfoViewModel, TradeInfoEntity entity)
+        /// <param name="sourceEntity">The trade information entity.</param>
+        /// <param name="entity">The entity to compare with.</param>
+        public static void AreEqualToEntity(this ITradeInfoEntity sourceEntity, TradeInfoEntity entity)
         {
-            Assert.AreEqual(entity.Id, tradeInfoViewModel.Id);
-            Assert.AreEqual(entity.Name, tradeInfoViewModel.Name);
-            Assert.AreEqual(entity.Category, tradeInfoViewModel.Category);
-            Assert.AreEqual(entity.City, tradeInfoViewModel.City);
-            Assert.AreEqual(entity.CountryCode, tradeInfoViewModel.CountryCode);
-            Assert.AreEqual(entity.Url, tradeInfoViewModel.Url);
+            Assert.AreEqual(entity.Id, sourceEntity.Id);
+            Assert.AreEqual(entity.Name, sourceEntity.Name);
+            Assert.AreEqual(entity.Category, sourceEntity.Category);
+            Assert.AreEqual(entity.City, sourceEntity.City);
+            Assert.AreEqual(entity.CountryCode, sourceEntity.CountryCode);
+            Assert.AreEqual(entity.Url, sourceEntity.Url);
         }
     }
 }

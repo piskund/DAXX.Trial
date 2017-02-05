@@ -1,15 +1,14 @@
 ﻿// -------------------------------------------------------------------------------------------------------------
-//  ITradesRepository.cs created by DEP on 2017/02/04
+//  IAppDataProvider.cs created by DEP on 2017/02/05
 // -------------------------------------------------------------------------------------------------------------
-
-using Daxx.Trial.DAL.Entities;
 
 namespace Daxx.Trial.DAL.Interfaces
 {
     /// <summary>
-    /// Defines repository contract for TradeInfoEntity.
+    /// Provides path to necessary data (placed to the App_Data in our case).
     /// </summary>
-    public interface ITradesRepository : IRepository<TradeInfoEntity>
+    public interface IAppDataProvider
     {
+        string GetAppDataPath();
     }
 }

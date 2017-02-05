@@ -22,13 +22,6 @@ namespace Daxx.Trial.DAL.Interfaces
         void Add(T entity);
 
         /// <summary>
-        /// Count using a filer
-        /// </summary>
-        /// <param name="whereCondition">The where condition.</param>
-        /// <returns></returns>
-        long Count(Expression<Func<T, bool>> whereCondition);
-
-        /// <summary>
         /// All item count
         /// </summary>
         /// <returns></returns>
@@ -39,15 +32,6 @@ namespace Daxx.Trial.DAL.Interfaces
         /// </summary>
         /// <param name="entity">The entity to delete</param>
         void Delete(T entity);
-
-        /// <summary>
-        /// Load the entities using a linq expression filter
-        /// </summary>
-        /// <param name="whereCondition">The where condition.</param>
-        /// <returns>
-        /// the loaded entity
-        /// </returns>
-        IEnumerable<T> GetAll(Expression<Func<T, bool>> whereCondition);
 
         /// <summary>
         /// Get all the element of this repository
@@ -62,13 +46,6 @@ namespace Daxx.Trial.DAL.Interfaces
         /// the loaded entity
         /// </returns>
         IQueryable<T> GetQueryable();
-
-        /// <summary>
-        /// Get a selected entity by the expression
-        /// </summary>
-        /// <param name="whereCondition">The where condition.</param>
-        /// <returns></returns>
-        T GetSingle(Expression<Func<T, bool>> whereCondition);
 
         /// <summary>
         /// Updates entity within the the repository
