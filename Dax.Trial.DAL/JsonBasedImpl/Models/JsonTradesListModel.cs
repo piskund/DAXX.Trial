@@ -36,6 +36,6 @@ namespace Daxx.Trial.DAL.JsonBasedImpl.Models
         /// <value>
         /// The result.
         /// </value>
-        public List<JsonTradeInfoModel> Result { get; set; }
+        public List<JsonTradeInfoModel> Results { get; set; }
     }
 }

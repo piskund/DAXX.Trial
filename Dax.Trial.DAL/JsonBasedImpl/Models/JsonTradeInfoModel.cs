@@ -64,7 +64,6 @@ namespace Daxx.Trial.DAL.JsonBasedImpl.Models
         /// <value>
         /// The URL.
         /// </value>
-        [JsonProperty("i")]
         public string Url { get; set; }
     }
 }
