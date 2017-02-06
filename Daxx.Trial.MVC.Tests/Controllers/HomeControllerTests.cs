@@ -2,6 +2,7 @@
 //  HomeControllerTest.cs created by DEP on 2017/02/04
 // -------------------------------------------------------------------------------------------------------------
 
+using System.Threading.Tasks;
 using System.Web.Mvc;
 using Daxx.Trial.MVC.Controllers;
 using Daxx.Trial.Abstractions.Interfaces;
@@ -21,11 +22,11 @@ namespace Daxx.Trial.MVC.Tests.Controllers
             var controller = new HomeController(repositoryMock.Object);
 
             // Act
-            var result = controller.Index() as ViewResult;
+            var result = controller.IndexAsync().Result;
 
             // Assert
             Assert.IsNotNull(result);
-            repositoryMock.Verify(r => r.GetAll(), Times.Once());
+            repositoryMock.Verify(r => r.GetAllAsync(), Times.Once());
         }
     }
 }

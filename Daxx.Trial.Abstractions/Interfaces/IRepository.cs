@@ -4,6 +4,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Daxx.Trial.Abstractions.Interfaces
 {
@@ -32,10 +33,16 @@ namespace Daxx.Trial.Abstractions.Interfaces
         void Delete(T entity);
 
         /// <summary>
-        /// Get all the element of this repository
+        /// Get all elements of this repository.
         /// </summary>
         /// <returns></returns>
         IEnumerable<T> GetAll();
+
+        /// <summary>
+        /// Get all elements of this repository asynchronously.
+        /// </summary>
+        /// <returns></returns>
+        Task<IEnumerable<T>> GetAllAsync();
 
         /// <summary>
         /// Query entities from the repository that match the linq expression selection criteria

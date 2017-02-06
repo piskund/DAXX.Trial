@@ -1,11 +1,13 @@
 ﻿// -------------------------------------------------------------------------------------------------------------
-//  JsonBasedTradesRepository.cs created by DEP on 2017/02/05
+//  JsonBasedTradesRepository.cs created by DEP on 2017/02/06
 // -------------------------------------------------------------------------------------------------------------
 
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
+using CodeContracts;
 using Daxx.Trial.Abstractions.Entities;
 using Daxx.Trial.Abstractions.Interfaces;
 
@@ -18,7 +20,8 @@ namespace Daxx.Trial.DAL.JsonBasedImpl
     public class JsonBasedTradesRepository : ITradesRepository
     {
         private const string JsonTradeFileName = "trades_info.json";
-        private readonly List<TradeInfoEntity> _tradeInfoEntities;
+        private readonly string _pathToJson;
+        private readonly List<TradeInfoEntity> _tradeInfoCache = new List<TradeInfoEntity>();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="JsonBasedTradesRepository"/> class.
@@ -26,10 +29,8 @@ namespace Daxx.Trial.DAL.JsonBasedImpl
         /// <param name="appDataProvider">The application data provider.</param>
         public JsonBasedTradesRepository(IAppDataProvider appDataProvider)
         {
-            var pathToJson = Path.Combine(appDataProvider.GetAppDataPath(), JsonTradeFileName);
-            var trades = JsonTradesInfoReader.ReadTradesFromFile(pathToJson);
-
-            _tradeInfoEntities = trades.Results.Select(r => new TradeInfoEntity(r)).ToList();
+            Requires.NotNull(appDataProvider, nameof(appDataProvider));
+            _pathToJson = Path.Combine(appDataProvider.GetAppDataPath(), JsonTradeFileName);
         }
 
         /// <summary>
@@ -48,7 +49,8 @@ namespace Daxx.Trial.DAL.JsonBasedImpl
         /// <returns>Number of trade records.</returns>
         public long Count()
         {
-            return _tradeInfoEntities.Count;
+            var trades = GetTradesAsync().Result;
+            return trades.Count;
         }
 
         /// <summary>
@@ -67,7 +69,17 @@ namespace Daxx.Trial.DAL.JsonBasedImpl
         /// <returns>All trade info entities.</returns>
         public IEnumerable<TradeInfoEntity> GetAll()
         {
-            return _tradeInfoEntities;
+            var trades = GetTradesAsync().Result;
+            return trades;
+        }
+
+        /// <summary>
+        /// Gets all asynchronously.
+        /// </summary>
+        /// <returns>All trade info entities.</returns>
+        public async Task<IEnumerable<TradeInfoEntity>> GetAllAsync()
+        {
+            return await GetTradesAsync();
         }
 
         /// <summary>
@@ -76,7 +88,8 @@ namespace Daxx.Trial.DAL.JsonBasedImpl
         /// <returns>The queryable collection.</returns>
         public IQueryable<TradeInfoEntity> GetQueryable()
         {
-            return _tradeInfoEntities.AsQueryable();
+            var trades = GetTradesAsync().Result;
+            return trades.AsQueryable();
         }
 
         /// <summary>
@@ -87,6 +100,31 @@ namespace Daxx.Trial.DAL.JsonBasedImpl
         public void Update(TradeInfoEntity entity)
         {
             throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// ounts entities in the repository asynchronously.
+        /// </summary>
+        /// <returns>Number of trade records.</returns>
+        public async Task<long> CountAsync()
+        {
+            var trades = await GetTradesAsync();
+            return trades.Count;
+        }
+
+        /// <summary>
+        /// Initialises the cache of trades asynchronously.
+        /// </summary>
+        /// <returns></returns>
+        private async Task<List<TradeInfoEntity>> GetTradesAsync()
+        {
+            if (!_tradeInfoCache.Any())
+            {
+                var trades = await JsonTradesInfoReader.ReadTradesFromFileAsync(_pathToJson);
+                _tradeInfoCache.AddRange(trades.Results.Select(r => new TradeInfoEntity(r)));
+            }
+
+            return _tradeInfoCache;
         }
     }
 }

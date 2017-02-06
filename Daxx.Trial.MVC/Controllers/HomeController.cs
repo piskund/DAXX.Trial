@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using CodeContracts;
 using Daxx.Trial.MVC.Models;
 using Daxx.Trial.Abstractions.Interfaces;
+using System.Threading.Tasks;
 
 namespace Daxx.Trial.MVC.Controllers
 {
@@ -35,10 +36,11 @@ namespace Daxx.Trial.MVC.Controllers
         /// Indexes this instance.
         /// </summary>
         /// <returns>Result of rendering of the home page according to the model.</returns>
-        public ActionResult Index()
+        public async Task<ActionResult> IndexAsync()
         {
-            var model = _tradesTradesRepository.GetAll().Select(e => (TradeInfoViewModel)e).ToList();
-            return View(model);
+            var trades = await _tradesTradesRepository.GetAllAsync();
+            var model = trades.Select(e => (TradeInfoViewModel)e).ToList();
+            return View("Index", model);
         }
     }
 }
